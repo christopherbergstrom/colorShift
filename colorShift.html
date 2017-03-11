@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <script>
+      var interval;
+      var hexArray = ["A","B","C","D","E","F","1","2","3","4","5","6","7","8","9","0"];
+      var color;
+      function changeColors()
+      {
+        color = "#";
+        for (var i = 0; i < 6; i++)
+        {
+          color+= hexArray[(Math.floor(Math.random()*16))];
+        }
+        $("body").css(
+          {
+            "background-color": color,
+            "transition": "1s"
+          });
+      }
+      $(document).ready(function()
+      {
+        interval = setInterval(function()
+        {
+          changeColors();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
